@@ -8,9 +8,12 @@ const content: string[] = [
   "Migrating my blog from Gatsby to Astro",
   "A Beginner's Guide to Static Forms",
   "How to add a blog to Next.js using Hyvor Blogs?",
+  "How to use the useCallback hook in React",
+  "Need help for deleting a WordPress Cookie with setcookie() Not Working",
+  "Effective use of middleware in express.js: practical approaches",
 ];
 
-export type StaticContentFields = {
+export type EmailFields = {
   id: string;
   content: {
     title: string;
@@ -18,7 +21,7 @@ export type StaticContentFields = {
   };
 };
 
-export function generateStaticContent(): StaticContentFields {
+export function generateStaticContent(): EmailFields {
   const uniqueId = getUniqueId();
 
   return {
