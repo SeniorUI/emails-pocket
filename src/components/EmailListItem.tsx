@@ -1,5 +1,5 @@
 import * as classNames from "classnames";
-import { FC, MouseEventHandler } from "react";
+import { FC, MouseEventHandler, MouseEvent } from "react";
 import { motion } from "framer-motion";
 
 type EmailListItemProps = {
@@ -7,7 +7,7 @@ type EmailListItemProps = {
   content: { title: string; text: string };
   isSelected: boolean;
 
-  onSelectEmail: (id: string) => void;
+  onSelectEmail: (event: MouseEvent<HTMLButtonElement>, id: string) => void;
 };
 
 export const EmailListItem: FC<EmailListItemProps> = ({
@@ -16,8 +16,10 @@ export const EmailListItem: FC<EmailListItemProps> = ({
   isSelected,
   onSelectEmail,
 }) => {
-  const handleSelectEmail: MouseEventHandler<HTMLButtonElement> = () => {
-    onSelectEmail(id);
+  const handleSelectEmail: MouseEventHandler<HTMLButtonElement> = (
+    event: MouseEvent<HTMLButtonElement>,
+  ) => {
+    onSelectEmail(event, id);
   };
 
   return (

@@ -1,4 +1,4 @@
-import { EmailsContainer } from "./EmailsContainer.tsx";
+import { EmailsContainer } from "./components/EmailsContainer.tsx";
 
 const App = () => {
   return (

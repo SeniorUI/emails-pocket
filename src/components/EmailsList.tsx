@@ -1,5 +1,5 @@
-import { EmailFields } from "./mockedStorage.ts";
-import { FC } from "react";
+import { EmailFields } from "../mockedStorage.ts";
+import { FC, MouseEvent } from "react";
 import { EmailListItem } from "./EmailListItem.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -7,7 +7,7 @@ type EmailsListProps = {
   emails: EmailFields[];
   selectedEmails: string[];
 
-  onSelectEmail: (id: string) => void;
+  onSelectEmail: (event: MouseEvent<HTMLButtonElement>, id: string) => void;
 };
 
 export const EmailsList: FC<EmailsListProps> = ({
@@ -32,7 +32,7 @@ export const EmailsList: FC<EmailsListProps> = ({
         {emails.map(({ id, content }: EmailFields) => (
           <motion.li
             key={id}
-            className="relative"
+            className="relative select-none"
             initial={{ y: -50, height: 0, opacity: 0 }}
             animate={{
               height: "auto",
