@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@types/uuid": "^9.0.3",
-    "classnames": "^2.3.2",
+    "clsx": "^2.0.0",
     "framer-motion": "^10.16.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,6 +31,7 @@
     "prettier": "^3.0.1",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-classname": "^0.0.3"
   }
 }

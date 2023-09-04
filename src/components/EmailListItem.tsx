@@ -1,4 +1,4 @@
-import * as classNames from "classnames";
+import { clsx } from "clsx";
 import { FC, MouseEventHandler, MouseEvent } from "react";
 import { motion } from "framer-motion";
 
@@ -26,10 +26,10 @@ export const EmailListItem: FC<EmailListItemProps> = ({
     <div className="p-1">
       <motion.button
         onClick={handleSelectEmail}
-        className={classNames(
+        className={clsx([
           `flex flex-col w-full text-left p-1 overflow-hidden rounded transition`,
           isSelected && `bg-blue-400 text-white`,
-        )}
+        ])}
       >
         <h2 className="w-full font-medium overflow-hidden text-ellipsis whitespace-nowrap">
           {content.title}
